@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "author": "Chung Nguyễn Quang",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-s3-devkitc-1", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": 8.3, "left": 134.2, "attrs": {} },
+    { "type": "wokwi-gnd", "id": "gnd1", "top": 105.6, "left": 153, "attrs": {} },
+    { "type": "wokwi-vcc", "id": "vcc1", "top": 19.96, "left": 230.4, "attrs": {} },
+    {
+      "type": "wokwi-led-bar-graph",
+      "id": "bargraph1",
+      "top": 91.2,
+      "left": -81.6,
+      "attrs": { "color": "lime","label": "Mực nước" }
+    },
+    { "type": "wokwi-vcc", "id": "vcc2", "top": 29.56, "left": -124.8, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 198,
+      "left": -101.4,
+      "attrs": { "color": "red", "flip": "1" ,"label":"Bơm"}
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "gnd1:GND", "pot1:GND", "black", [ "v0" ] ],
+    [ "pot1:VCC", "vcc1:VCC", "red", [ "v28.8", "h56.8", "v-57.6" ] ],
+    [ "esp:1", "pot1:SIG", "green", [ "h23.77", "v28.62", "h57.6" ] ],
+    [ "bargraph1:C2", "esp:16", "green", [ "h0" ] ],
+    [ "bargraph1:C3", "esp:17", "green", [ "h0" ] ],
+    [ "bargraph1:C4", "esp:18", "green", [ "h0" ] ],
+    [ "bargraph1:C5", "esp:8", "green", [ "h0" ] ],
+    [ "bargraph1:C6", "esp:3", "green", [ "h0" ] ],
+    [ "bargraph1:C7", "esp:46", "green", [ "h0" ] ],
+    [ "bargraph1:C8", "esp:9", "green", [ "h0" ] ],
+    [ "bargraph1:C9", "esp:10", "green", [ "h0" ] ],
+    [ "bargraph1:C10", "esp:11", "green", [ "h0" ] ],
+    [ "vcc2:VCC", "bargraph1:A1", "red", [ "v0" ] ],
+    [ "bargraph1:C1", "esp:15", "green", [ "v0" ] ],
+    [ "vcc2:VCC", "bargraph1:A10", "red", [ "v0" ] ],
+    [ "vcc2:VCC", "bargraph1:A9", "red", [ "v0" ] ],
+    [ "vcc2:VCC", "bargraph1:A8", "red", [ "v0" ] ],
+    [ "vcc2:VCC", "bargraph1:A7", "red", [ "v0" ] ],
+    [ "vcc2:VCC", "bargraph1:A6", "red", [ "v0" ] ],
+    [ "vcc2:VCC", "bargraph1:A5", "red", [ "v0" ] ],
+    [ "vcc2:VCC", "bargraph1:A4", "red", [ "v0" ] ],
+    [ "vcc2:VCC", "bargraph1:A3", "red", [ "v0" ] ],
+    [ "vcc2:VCC", "bargraph1:A2", "red", [ "v0" ] ],
+    [ "vcc2:VCC", "led1:A", "red", [ "v0" ] ],
+    [ "led1:C", "esp:13", "green", [ "v0", "h47.6", "v-38.4" ] ]
+  ],
+  "dependencies": {}
+}
