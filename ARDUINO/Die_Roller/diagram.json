@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "author": "Ayush Raj",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-mega", "id": "mega", "top": 0.6, "left": -3.6, "attrs": {} },
+    {
+      "type": "board-grove-oled-sh1107",
+      "id": "oled1",
+      "top": 201.37,
+      "left": -44.9,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 255.8,
+      "left": 249.6,
+      "attrs": { "color": "green", "xray": "1" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": 207.8,
+      "left": 249.6,
+      "attrs": { "color": "red", "xray": "1" }
+    },
+    { "type": "wokwi-vcc", "id": "vcc1", "top": 202.36, "left": 134.4, "attrs": {} },
+    { "type": "wokwi-gnd", "id": "gnd1", "top": 220.8, "left": 153, "attrs": {} }
+  ],
+  "connections": [
+    [ "mega:5V", "vcc1:VCC", "red", [ "v16.5", "h-36.1", "v19.2" ] ],
+    [ "mega:GND.2", "gnd1:GND", "black", [ "v0" ] ],
+    [ "oled1:GND.1", "gnd1:GND", "black", [ "h19.2", "v0", "h38.4", "v-57.6" ] ],
+    [ "oled1:VCC", "vcc1:VCC", "red", [ "h19.2", "v-9.6" ] ],
+    [ "mega:20", "oled1:SDA", "green", [ "v-28.8", "h69.2", "v364.8", "h-240", "v-48" ] ],
+    [ "mega:21", "oled1:SCL.1", "green", [ "v-48", "h50.1", "v403.2", "h-240", "v-28.8" ] ],
+    [ "btn2:1.r", "btn1:2.r", "black", [ "v0", "h19.4", "v67.2" ] ],
+    [ "btn2:1.l", "gnd1:GND", "black", [ "h0" ] ],
+    [ "mega:23", "btn2:2.r", "green", [ "v1.1", "h-21.8", "v220.8" ] ],
+    [ "mega:22", "btn1:1.r", "green", [ "v1.1", "h-31", "v249.6" ] ]
+  ],
+  "dependencies": {}
+}
