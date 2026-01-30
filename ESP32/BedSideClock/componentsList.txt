@@ -1,0 +1,31 @@
+ESP32 Weather Display & Relay Control - Components List
+
+1. Microcontroller:
+   - ESP32 Development Board (any standard ESP32 Dev Module)
+
+2. Display:
+   - SSD1306 OLED Display (I2C, 128x64)
+
+3. Input:
+   - Capacitive Touch Sensor Module (e.g., TTP223)
+
+4. Output:
+   - Relay Module (5V, 1-channel or 2-channel)
+   - Optional: LEDs for relay status (if desired)
+
+5. Power:
+   - 3.3V / 5V supply (from ESP32 or external power source)
+   - Jumper wires
+   - Breadboard (optional, for prototyping)
+
+6. Software / Libraries:
+   - Arduino IDE with ESP32 board support
+   - Libraries:
+     - Adafruit_SSD1306
+     - Adafruit_GFX
+     - ArduinoJson
+     - WiFi
+
+7. Optional:
+   - Weather API key / URL from Open-Meteo (JSON format)  //required for fetching weather details
+   - USB cable for programming ESP32

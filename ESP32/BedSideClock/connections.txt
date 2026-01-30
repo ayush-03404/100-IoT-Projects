@@ -1,0 +1,27 @@
+ESP32 Weather Display & Relay Control - Connections
+
+1. OLED Display (SSD1306 I2C)
+--------------------------------
+- VCC  → 3.3V (ESP32)
+- GND  → GND (ESP32)
+- SDA  → GPIO 21 (ESP32)
+- SCL  → GPIO 22 (ESP32)
+
+2. Capacitive Touch Sensor (TTP223 or similar)
+----------------------------------------------
+- VCC  → 3.3V or 5V (ESP32)
+- GND  → GND (ESP32)
+- OUT  → GPIO 4 (ESP32)
+
+3. Relay Module
+----------------
+- VCC  → 5V (ESP32 or external 5V supply)
+- GND  → GND (ESP32)
+- IN   → GPIO 5 (ESP32)
+
+Notes:
+------
+- Ensure all GNDs are common (OLED, ESP32, Touch Sensor, Relay).
+- The touch sensor outputs HIGH when pressed; this is read by ESP32.
+- Relay is activated when GPIO pin is set HIGH (depending on module type, some modules are active LOW).
+- Use short jumper wires for reliable connections to the breadboard or ESP32.

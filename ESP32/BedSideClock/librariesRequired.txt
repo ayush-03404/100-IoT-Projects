@@ -1,0 +1,23 @@
+ESP32 Weather Display & Relay Control - Required Libraries
+
+1. Adafruit_SSD1306
+   - Purpose: To drive the OLED display (SSD1306) via I2C.
+   - Installation: Install via Arduino IDE Library Manager.
+
+2. Adafruit_GFX
+   - Purpose: Provides graphics primitives (text, shapes) for OLED display.
+   - Installation: Install via Arduino IDE Library Manager.
+
+3. ArduinoJson
+   - Purpose: To parse JSON data received from the Open-Meteo weather API.
+   - Version: Recommended 6.x or compatible with your ArduinoJson syntax.
+   - Installation: Install via Arduino IDE Library Manager.
+
+4. WiFi
+   - Purpose: To connect the ESP32 to a Wi-Fi network.
+   - Notes: Built-in with ESP32 board support in Arduino IDE.
+
+Optional:
+- HTTPClient
+  - Purpose: To make HTTP requests to the weather API.
+  - Notes: Included in ESP32 Arduino core libraries.

@@ -1,0 +1,44 @@
+ESP32 Weather Display & Relay Control - How it Works
+
+This project uses an ESP32 microcontroller connected to an SSD1306 OLED display and a capacitive touch sensor to display time, weather, and control a relay.
+
+1. Time & Date
+   - ESP32 fetches local time using the `getLocalTime()` function.
+   - The main page shows the current date and time including seconds.
+   - Seconds are updated live every second, preventing freezing.
+
+2. Weather
+   - Weather data is fetched from the Open-Meteo API using HTTP requests.
+   - JSON data is parsed using the ArduinoJson library.
+   - Current weather description, temperature, day/night status, wind speed, sunrise, and sunset times are extracted.
+   - Weather information is displayed on different UI pages:
+       - Weather Page: Shows "Weather: Clear" or similar.
+       - Wind Page: Shows wind speed.
+       - Sun Page: Shows sunrise and sunset times.
+
+3. UI Pages & Navigation
+   - The interface has 5 pages:
+       1. Main Page (time, date, temperature, day/night)
+       2. Wind Page
+       3. Weather Page
+       4. Sun Page
+       5. Relay Page
+   - Tap the capacitive touch sensor to move to the next page.
+   - The pages update dynamically as the touch sensor is used.
+
+4. Relay Control
+   - The relay can be toggled only on the Relay Page.
+   - Long press the capacitive touch sensor for 8 seconds to toggle the relay.
+   - A progress indicator shows how long the sensor needs to be pressed.
+
+5. Refresh & Performance
+   - Weather data is refreshed periodically (e.g., every 10 minutes).
+   - UI redraws are controlled with flags to prevent freezing.
+   - Main page seconds update independently to ensure live time display.
+
+6. Hardware Connections
+   - OLED uses I2C (SDA/SCL pins) to communicate with ESP32.
+   - Capacitive touch sensor outputs HIGH when pressed.
+   - Relay module is driven by a digital pin (HIGH activates relay).
+
+Overall, this project integrates IoT (weather API), real-time display, touch control, and hardware relay control into a single interactive interface.
